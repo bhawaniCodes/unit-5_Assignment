@@ -23,7 +23,8 @@ export const Login = () => {
             (item) =>
                 item.email === loginData.email &&
                 item.password === loginData.password &&
-                history.push("/dashboard")
+                (history.push("/dashboard") ||
+                    localStorage.setItem("authState", true))
         );
     };
 
