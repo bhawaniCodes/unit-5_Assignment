@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useState } from 'react'
 
 export const Login = () => {
@@ -10,8 +11,12 @@ export const Login = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const resp = await axios.post("http://localhost:3001/users", formData);
-        // setFormData()
+        const resp = await axios.get("http://localhost:3001/users");
+        resp.data.map((item) =>
+            if(item.email === loginData.email && item.password === loginData.password) {
+            
+            }
+        )
     };
 
     return (

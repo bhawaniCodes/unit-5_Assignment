@@ -35,6 +35,12 @@ export default function Navbar() {
                         </Typography>
                         <Button
                             color="inherit"
+                            onClick={() => history.push("/dashboard")}
+                        >
+                            Dashboard
+                        </Button>
+                        <Button
+                            color="inherit"
                             onClick={() => history.push("/login")}
                         >
                             Login

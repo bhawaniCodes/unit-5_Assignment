@@ -1,3 +1,4 @@
+import { RouteAll } from "./Route/Route";
 import './App.css';
 import Navbar from './Components/Navbar';
 import { Signup } from './Components/Signup';
@@ -5,8 +6,7 @@ import { Signup } from './Components/Signup';
 function App() {
   return (
       <div className="App">
-          <Navbar />
-          <Signup />
+          <RouteAll />
       </div>
   );
 }
