@@ -1,22 +1,30 @@
-import axios from 'axios';
-import React, { useState } from 'react'
+import axios from "axios";
+import React, { useState } from "react";
+import { useHistory } from "react-router";
+
+const initData = {
+    email: "",
+    password: "",
+};
 
 export const Login = () => {
-    const [loginData, setLoginData] = useState({});
+    const [loginData, setLoginData] = useState(initData);
+    const history = useHistory();
 
     const handleChange = (e) => {
         const { name, value } = e.target;
-        setLoginData({...loginData, [name]: value})
-    }
+        setLoginData({ ...loginData, [name]: value });
+    };
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         const resp = await axios.get("http://localhost:3001/users");
-        resp.data.map((item) =>
-            if(item.email === loginData.email && item.password === loginData.password) {
-            
-            }
-        )
+        resp.data.map(
+            (item) =>
+                item.email === loginData.email &&
+                item.password === loginData.password &&
+                history.push("/dashboard")
+        );
     };
 
     return (
@@ -39,4 +47,4 @@ export const Login = () => {
             </form>
         </div>
     );
-}
+};
