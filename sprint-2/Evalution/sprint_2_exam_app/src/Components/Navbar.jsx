@@ -31,7 +31,7 @@ export default function Navbar() {
                             component="div"
                             sx={{ flexGrow: 1 }}
                         >
-                            News
+                            Meetup
                         </Typography>
                         <Button
                             color="inherit"
