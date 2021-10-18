@@ -8,13 +8,18 @@ export const Login = () => {
         setLoginData({...loginData, [name]: value})
     }
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        
+    };
+
     return (
         <div>
-            <form action="">
+            <form action="" onSubmit={handleSubmit}>
                 <input
                     type="text"
-                    placeholder="username"
-                    name="username"
+                    placeholder="email"
+                    name="email"
                     onChange={handleChange}
                 />
                 <input

@@ -3,9 +3,10 @@ import Navbar from './Components/Navbar';
 
 function App() {
   return (
-    <div className="App">
-      <Navbar/>
-    </div>
+      <div className="App">
+          <Navbar />
+          <Signup />
+      </div>
   );
 }
 
