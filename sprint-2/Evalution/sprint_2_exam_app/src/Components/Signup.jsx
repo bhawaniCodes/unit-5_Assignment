@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import axios from "axios";
+import { useHistory } from "react-router";
 
 const initData = {
     name: "",
@@ -6,15 +8,16 @@ const initData = {
     password: "",
     age: "",
     location: "",
-    technology : false,
-    food : false,
-    language : false,
-    movies : false,
-    drama:false,
+    technology: false,
+    food: false,
+    language: false,
+    movies: false,
+    drama: false,
 };
 
 export const Signup = () => {
     const [formData, setFormData] = useState(initData);
+    const history = useHistory();
 
     const handleChange = (e) => {
         const { name, value, checked, type } = e.target;
@@ -23,14 +26,17 @@ export const Signup = () => {
             [name]: type === "checkbox" ? value : value,
         });
     };
-    const handleSubmit = async(e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        const resp = await axios .post('http://localhost:3001/users', formData);
-        // setFormData()
+        const resp = await axios.post("http://localhost:3001/users", formData);
+        history.push("/login");
     };
 
     return (
         <div>
+            <h2>Signup</h2>
+            
+
             <form action="" onSubmit={handleSubmit}>
                 <input
                     type="text"
@@ -119,4 +125,3 @@ export const Signup = () => {
         </div>
     );
 };
-

@@ -8,13 +8,15 @@ export const Login = () => {
         setLoginData({...loginData, [name]: value})
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
-        
+        const resp = await axios.post("http://localhost:3001/users", formData);
+        // setFormData()
     };
 
     return (
         <div>
+            <h2>Login</h2>
             <form action="" onSubmit={handleSubmit}>
                 <input
                     type="text"
@@ -28,6 +30,7 @@ export const Login = () => {
                     name="password"
                     onChange={handleChange}
                 />
+                <input type="submit" />
             </form>
         </div>
     );

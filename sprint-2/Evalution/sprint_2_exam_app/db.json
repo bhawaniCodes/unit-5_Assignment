@@ -1,5 +1,31 @@
 {
   "users": [
+    {
+      "name": "bhanu",
+      "email": "sdf",
+      "password": "123",
+      "age": "12",
+      "location": "dfg",
+      "technology": "true",
+      "food": "true",
+      "language": false,
+      "movies": false,
+      "drama": "true",
+      "id": 1
+    },
+    {
+      "name": "",
+      "email": "",
+      "password": "",
+      "age": "",
+      "location": "",
+      "technology": false,
+      "food": false,
+      "language": false,
+      "movies": false,
+      "drama": false,
+      "id": 2
+    }
   ],
   "comments": [
     {
