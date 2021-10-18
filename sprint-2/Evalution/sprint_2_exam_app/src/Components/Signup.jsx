@@ -1,6 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
+
+const initData = {
+    name: "",
+    email: "",
+    password: "",
+    age:"",
+    location:"",
+    interest:[]
+}
 
 export const Signup = () => {
+    const [formData, setFormData] = useState(initData)
+
     return (
         <div>
             <form action="">
@@ -8,6 +19,18 @@ export const Signup = () => {
                     type="text"
                     placeholder="name"
                     name="name"
+                    onChange={handleChange}
+                />
+                <input
+                    type="text"
+                    placeholder="email"
+                    name="email"
+                    onChange={handleChange}
+                />
+                <input
+                    type="password"
+                    placeholder="password"
+                    name="password"
                     onChange={handleChange}
                 />
                 <input
@@ -22,28 +45,11 @@ export const Signup = () => {
                     name="location"
                     onChange={handleChange}
                 />
-                <div>
-                    <input
-                        type="checkbox"
-                        id="coding"
-                        name="interest"
-                        value="coding"
-                        checked
-                    />
-                    <label htmlFor=""></label>
-                </div>
-                <div>
-                    <input
-                        type="checkbox"
-                        id="music"
-                        name="interest"
-                        value="music"
-                    />
-                    <label htmlFor=""></label>
-                </div>
+                <label htmlFor=""></label>
+                <input type="checkbox" name="" onChange={handleChange} />
             </form>
         </div>
     );
-}
+}technology, food, language learning, movies, culture, art, drama etc
 
 
