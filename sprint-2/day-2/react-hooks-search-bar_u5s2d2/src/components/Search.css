@@ -1,0 +1,20 @@
+.show {
+	width: 190px;
+	height: 200px;
+	overflow: hidden;
+	margin: auto;
+}
+
+.hide {
+	display: block;
+}
+
+.result {
+	margin: 0px;
+	padding: 6px;
+}
+
+.result:hover {
+	cursor: pointer;
+	background-color: rgb(241, 242, 243);
+}
