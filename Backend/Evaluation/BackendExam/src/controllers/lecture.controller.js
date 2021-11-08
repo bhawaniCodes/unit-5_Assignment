@@ -54,3 +54,6 @@ router.get('/:id', async (req, res) => {
 })
 
 module.exports = router;
+
+
+// bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2MzYzNzQwMTh9.O73AX4p2oj7KWnksePc9Q18RLiKmuEPfyC8EO0S6q5c

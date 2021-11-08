@@ -9,19 +9,21 @@ const createToken = (user) => {
 const register = async (req, res) => {
     let user;
     try {
+        console.log(req.body)
         user = await User.findOne({ email: req.body.email });
 
         if (user)
             return res.status(400).send({ message: "Email already exists" });
+        console.log('user: ', user)
         user = await User.create(req.body);
         const token = createToken();
         return res.status(200).send({ user, token });
     } catch (err) {
-        return res.status(400).send({ message: "Something went wrong" });
+        return res.status(400).send(err.message);
     }
 };
 
-const login = async (res, req)=>{
+const login = async (req, res)=>{
     try {
         let user = await User.findOne({ email: req.body.email }).lean().exec();
         if (!user) {

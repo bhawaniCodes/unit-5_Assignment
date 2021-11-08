@@ -4,9 +4,9 @@ const authenticate = require("../middleware/authenticate");
 const User = require("../models/user.model");
 const router = express.Router();
 
-router.post("/",upload.single('profile_photo_url'),  async (req, res) => {
+router.post("/", upload.single("profile_photo_url"), async (req, res) => {
     try {
-        const user = await User.create(req.body);
+        const user = await User.create({ ...req.body, profile_photo_url : req.file.path});
         return res.status(201).send(user);
     } catch (error) {
         return res.status(400).send(error.message);
