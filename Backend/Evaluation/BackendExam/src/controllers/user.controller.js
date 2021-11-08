@@ -1,8 +1,10 @@
 const express = require("express");
+const upload = require("../configs/multer");
+const authenticate = require("../middleware/authenticate");
 const User = require("../models/user.model");
 const router = express.Router();
 
-router.post("/", async (req,  res) => {
+router.post("/",upload.single('profile_photo_url'),  async (req, res) => {
     try {
         const user = await User.create(req.body);
         return res.status(201).send(user);
