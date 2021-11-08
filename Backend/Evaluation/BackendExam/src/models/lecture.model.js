@@ -2,9 +2,13 @@ const mongoose = require('mongoose');
 
 const lectureSchema = mongoose.Schema(
     {
-        user: {type: mongoose.Types.ObjectId, ref: 'users', required: true },
-        roll_number: { type: Number, required: true },
-        batch: { type: String, required: true }
+        title: { type: String, required: true },
+        instructor: {
+            type: mongoose.Types.ObjectId,
+            ref: "users",
+            required: true,
+        },
+        batch: { type: String, required: true },
     },
     {
         timestamps: true,
@@ -12,9 +16,8 @@ const lectureSchema = mongoose.Schema(
     }
 );
 
-const Lecture = mongoose.model("student", lectureSchema);
+const Lecture = mongoose.model("lectures", lectureSchema);
 module.exports = Lecture;
-
 
 
 
