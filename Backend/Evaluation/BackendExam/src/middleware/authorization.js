@@ -3,7 +3,7 @@ function authorize(permissionRoles) {
         const user = req.user;
 
         let allowed = false;
-        const allowedArray = user.roles.map(role => {
+        user.roles.map(role => {
             if (permissionRoles.includes(role)) {
                 allowed = true
             }
