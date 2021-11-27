@@ -5,10 +5,10 @@ const Lecture = require("../models/lecture.model");
 const User = require("../models/user.model");
 const router = express.Router();
 
-router.post("/", authenticate, authorize(["instructor", "admin"]), async (req, res) => {
+router.post("/", authenticate, authorize(["instructor"]), async (req, res) => {
     try {
         const lecture = await Lecture.create(req.body);
-        return res.status(201).send({lecture: lecture});
+        return res.status(201).send({ lecture: lecture });
     } catch (error) {
         return res.status(400).send(error.message);
     }
